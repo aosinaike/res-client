@@ -1,0 +1,327 @@
+<div class="container-fluid">
+  <!--First row (only row)-->
+  <div class="jumbotron"></div>
+  <div class="row profileCard">
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <div class="text-center card" >
+        <div class="card-body">
+          <!-- Placeholder image using Placeholder.com -->
+          <img  style="width: 200px;height:200px;" class="img-rounded"/>
+          <!-- Header text (Person's name) -->
+          <h2 ><span>Abiodun Osinaike</span></h2>
+
+          <!-- Social buttons using anchor elements and btn-primary class to style -->
+          <div  class="table-responsive text-nowrap">
+            <table class=" table table-borderless lead">
+              <tbody>
+              <tr>
+                <td style="text-align: center"><i class="fa fa-map-marker"></i></td>
+                <td style="text-align: left"><label>Nigeria</label></td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><i class="fa fa-external-link"></i></td>
+                <td style="text-align: left"><label>www.rx.com</label></td>
+              </tr>
+              <tr >
+                <td style="text-align: center"><i class="fa fa-envelope"></i></td>
+                <td style="text-align: left"><label>j@gg.com</label></td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><i class="fa fa-calendar"></i></td>
+                <td style="text-align: left"><label>20th</label></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 col-sm-* col-xs-* profileInfo">
+      <div>
+        <h1 ><label>Engineering</label></h1>
+        <div class="col-md-6" style="float:left;padding: 0;font-weight:200">
+          <h2>
+            <label class="" style="float:left;font-weight:400">103 Connections</label>
+          </h2>
+        </div>
+        <div>
+          <div class="col-md-4"  style="float:left;">
+            <input type="hidden" id="userStatus"/>
+            <button id="connectStatusBtn" class="btn btn-primary" style="float:left;">Connected</button>
+            <div class="dropdown dropdown-option"  style="float:left;">
+              <button class="optionBtn col-xs-2 fa fa-ellipsis-v"></button>
+              <div class="dropdown-option-content">
+                <a href="#">Publish</a>
+                <a href="#">Edit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 mt-5 mb-5" style="float: left;">
+        <a alt="right arrow" style="float: left;"><i style="font-size: xx-large;color: #007aff;" class="fa fa-angle-left"></i></a>
+        <div id="connectionList">
+
+        </div>
+
+        <a alt="left arrow" style="float: left;"><i style="font-size: xx-large;color: #007aff;" class="fa fa-angle-right"></i></a>
+      </div>
+      <div class="profileDesc">
+        <p class="lead"><label>Description</label></p>
+      </div>
+    </div>
+    <hr/>
+  </div>
+
+  <div class="row extra_margin">
+    <!-- First column (smaller of the two). Will appear on the left on desktop and on the top on mobile. -->
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <!-- Div to center the header image/name/social buttons -->
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+      </div>
+    </div> <!-- End Col 1 -->
+
+    <!-- Second column - for small and extra-small screens, will use whatever # cols is available -->
+    <div class="col-md-8 col-sm-* col-xs-*" style="margin-top: -5vh">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+          <div id="accordion" aria-multiselectable="true">
+            <div class="card form-group">
+              <div class="card-header" id="heading-2">
+                <h5 class="mb-0">
+                  <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2"
+                     aria-expanded="false" aria-controls="collapse-2">Work Experience</a>
+                </h5>
+              </div>
+              <div id="collapse-2" class="collapse" data-parent="#accordion" aria-labelledby="heading-2">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#workExperienceModal">Add Experience</button>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="workExperienceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="workExperienceModalTitle">New Work Experience</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form class="form-container" id="workExperienceForm">
+                            <div class="modal-body">
+
+                              <div class="form-group">
+                                <label for="company">Organisation</label>
+                                <input type="text" class="form-control" id="company" placeholder="e.g RDXpert">
+                              </div>
+                              <div class="form-group">
+                                <label for="jobTitle">Job Title</label>
+                                <input type="text" class="form-control" id="jobTitle"   placeholder="Research Assistant">
+                              </div>
+                              <div class="form-group">
+                                <label for="jobDescription">Job Description</label>
+                                <textarea class="form-control" id="jobDescription"  rows="3"></textarea>
+                              </div>
+                              <div class="start_date input-group mb-4 ">
+                                <input class="form-control start_date" type="text"  placeholder="start date" id="startdate_datepicker">
+                                <div class="input-group-append">
+                                  <span class="fa fa-calendar input-group-text start_date_calendar" aria-hidden="true "></span>
+                                </div>
+                              </div>
+                              <div class="end_date input-group mb-4" >
+                                <input class="form-control end_date" type="text" placeholder="end date"  id="enddate_datepicker">
+                                <div class="input-group-append">
+                                  <span class="fa fa-calendar input-group-text end_date_calendar" aria-hidden="true "></span>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city"   placeholder="City">
+                              </div>
+                              <div class="form-group">
+                                <select class="form-control custom-select mr-sm-2" id="country" >
+                                  <option value="">Choose country...</option>
+                                </select>
+                              </div>
+
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="Submit"  class="btn btn-primary">Save changes</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--table-->
+                  <div class="col-xs-12">
+                    <div>
+                      <div  class="table-responsive">
+                        <ul id="wexp" class="list-group list-group-flush"></ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card form-group">
+              <div class="card-header" id="heading-3">
+                <h5 class="mb-0">
+                  <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                    Research Work
+                  </a>
+                </h5>
+              </div>
+              <div id="collapse-3" class="collapse" data-parent="#accordion" aria-labelledby="heading-3">
+                <div class="card-body">
+                  <ul id="researchWork">
+                    <li >
+                      <div class="col-12">
+                        <div class="ui-block">
+                          <!-- Post -->
+                          <article class="hentry post has-post-thumbnail thumb-full-width">
+                            <div class="post__author author vcard inline-items">
+                              <!--<img src="img/author-page.jpg" alt="author">-->
+                              <div class="author-date">
+                                <a class="h6 post__author-name fn" href="02-ProfilePage.html">James Spiegel</a> wrote a <a href="#">blog post</a>
+                                <div class="post__date">
+                                  <time class="published" datetime="2017-03-24T18:18">
+                                    7 hours ago
+                                  </time>
+                                </div>
+                              </div>
+
+                              <div class="more">
+<!--                                <svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>-->
+                                <ul class="more-dropdown">
+                                  <li>
+                                    <a href="#">Edit Post</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Delete Post</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Turn Off Notifications</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Select as Featured</a>
+                                  </li>
+                                </ul>
+                              </div>
+
+                            </div>
+
+                            <div class="post-thumb">
+                              <img alt="photo">
+                            </div>
+
+                            <a href="#" data-toggle="modal" data-target="#blog-post-popup" class="h2 post-title">My Perfect Vacations in South America and Europe</a>
+
+                            <p>Lorem ipsum dolor sit amet, consectadipisicing elit, sed do eiusmod por incidid ut labore et
+                              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud lorem exercitation ullamco laboris
+                              nisi ut aliquip ex ea commodo consequat. Duis en aute irure dolor in reprehenderit in voluptate
+                              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                              sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                              sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt...
+                            </p>
+
+                            <a href="#" data-toggle="modal" data-target="#blog-post-popup" class="btn btn-md-2 btn-border-think c-grey btn-transparent custom-color">Read More</a>
+
+                            <div class="post-additional-info inline-items">
+
+                              <a href="#" class="post-add-icon inline-items">
+<!--                                <svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>-->
+                                <span>8</span>
+                              </a>
+
+                              <ul class="friends-harmonic">
+                                <li>
+                                  <a href="#">
+                                    <img  alt="friend">
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    <img  alt="friend">
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    <img  alt="friend">
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    <img  alt="friend">
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    <img  alt="friend">
+                                  </a>
+                                </li>
+                              </ul>
+
+                              <div class="names-people-likes">
+                                <a href="#">Jenny </a>, <a href="#">Robert</a> and
+                                <br>6 more liked this
+                              </div>
+
+
+                              <div class="comments-shared">
+                                <a href="#" class="post-add-icon inline-items">
+<!--                                  <svg class="olymp-speech-balloon-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>-->
+                                  <span>12</span>
+                                </a>
+
+                                <a href="#" class="post-add-icon inline-items">
+<!--                                  <svg class="olymp-share-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>-->
+                                  <span>0</span>
+                                </a>
+                              </div>
+                            </div>
+                          </article>
+
+                          <!-- ... end Post -->
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card form-group">
+              <div class="card-header" id="heading-3">
+                <h5 class="mb-0">
+                  <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                    Publications
+                  </a>
+                </h5>
+              </div>
+              <div id="collapse-3" class="collapse" data-parent="#accordion" aria-labelledby="heading-3">
+                <div class="card-body">
+                  Text 3
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">..2.</div>
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">..3.</div>
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">..4.</div>
+      </div>
+    </div> <!-- End column 2 -->
+  </div> <!-- End row 1 -->
+</div> <!-- End main container -->

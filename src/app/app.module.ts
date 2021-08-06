@@ -5,18 +5,30 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import {AuthGuardService} from "./guards/auth-guard.service";
+import {AppService} from "./services/AppService";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import {MDBBootstrapModule} from "angular-bootstrap-md";
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    OAuthModule.forRoot(),
+    MDBBootstrapModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
